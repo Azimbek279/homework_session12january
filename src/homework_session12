@@ -1,0 +1,605 @@
+create table Customers(
+    id serial primary key ,
+    first_name varchar(50) not null ,
+    last_name varchar(50) not null,
+    email varchar(50) not null  unique ,
+    phone_number varchar(50)
+);
+
+create table Basket(
+    id serial primary key ,
+    basket_name varchar(50) not null ,
+    customer_id integer references Customers(id)
+);
+
+create table Products(
+    id serial primary key ,
+    name varchar(50) not null,
+    description varchar not null ,
+    price integer not null,
+    weight integer not null
+);
+
+create table Product_Basket(
+    id serial primary key ,
+    basket_id integer references Basket(id),
+    product_id integer references Products(id)
+);
+
+create table Product_Info(
+    id serial primary key ,
+    expiration_date date,
+    country varchar(50) not null,
+    color varchar(50) not null,
+    product_id integer references Products(id)
+);
+insert into Customers (id, first_name, last_name, email, phone_number) values (1, 'Kiel', 'Atterbury', 'katterbury0@upenn.edu', '(364) 1612344');
+insert into Customers (id, first_name, last_name, email, phone_number) values (2, 'Mari', 'Core', 'mcore1@springer.com', '(656) 2584014');
+insert into Customers (id, first_name, last_name, email, phone_number) values (3, 'Lura', 'Claffey', 'lclaffey2@ebay.co.uk', '(578) 3317032');
+insert into Customers (id, first_name, last_name, email, phone_number) values (4, 'Nedi', 'Velden', 'nvelden3@hao123.com', '(209) 7034971');
+insert into Customers (id, first_name, last_name, email, phone_number) values (5, 'Prescott', 'Connett', 'pconnett4@t.co', '(980) 6259747');
+insert into Customers (id, first_name, last_name, email) values (6, 'Dori', 'Iacovazzi', 'diacovazzi5@about.com');
+insert into Customers (id, first_name, last_name, email, phone_number) values (7, 'Loy', 'McTiernan', 'lmctiernan6@nsw.gov.au', '(306) 1994566');
+insert into Customers (id, first_name, last_name, email, phone_number) values (8, 'Mureil', 'Meacher', 'mmeacher7@bloglines.com', '(661) 4544808');
+insert into Customers (id, first_name, last_name, email, phone_number) values (9, 'Winfield', 'Ouchterlony', 'wouchterlony8@wordpress.org', '(751) 2799946');
+insert into Customers (id, first_name, last_name, email) values (10, 'Tamra', 'Melanaphy', 'tmelanaphy9@illinois.edu');
+insert into Customers (id, first_name, last_name, email, phone_number) values (11, 'Levin', 'Olin', 'lolina@github.io', '(403) 3149893');
+insert into Customers (id, first_name, last_name, email, phone_number) values (12, 'Tedra', 'Soames', 'tsoamesb@purevolume.com', '(778) 7077843');
+insert into Customers (id, first_name, last_name, email) values (13, 'Gustavus', 'Welman', 'gwelmanc@networksolutions.com');
+insert into Customers (id, first_name, last_name, email, phone_number) values (14, 'Jarred', 'Leither', 'jleitherd@tripod.com', '(803) 4689711');
+insert into Customers (id, first_name, last_name, email, phone_number) values (15, 'Sampson', 'Potte', 'spottee@usatoday.com', '(705) 4776619');
+insert into Customers (id, first_name, last_name, email, phone_number) values (16, 'Nye', 'Etty', 'nettyf@pen.io', '(614) 7778297');
+insert into Customers (id, first_name, last_name, email) values (17, 'Babita', 'Braddon', 'bbraddong@tamu.edu');
+insert into Customers (id, first_name, last_name, email, phone_number) values (18, 'Una', 'Rimer', 'urimerh@slate.com', '(502) 2382018');
+insert into Customers (id, first_name, last_name, email, phone_number) values (19, 'Jenilee', 'Fallen', 'jfalleni@jugem.jp', '(999) 6753745');
+insert into Customers (id, first_name, last_name, email, phone_number) values (20, 'Salome', 'Doctor', 'sdoctorj@webnode.com', '(288) 8934076');
+insert into Customers (id, first_name, last_name, email) values (21, 'Jacquenetta', 'Paunsford', 'jpaunsfordk@ow.ly');
+insert into Customers (id, first_name, last_name, email, phone_number) values (22, 'Kristos', 'Menlow', 'kmenlowl@mapquest.com', '(454) 5866109');
+insert into Customers (id, first_name, last_name, email, phone_number) values (23, 'Charis', 'Hugnin', 'chugninm@oaic.gov.au', '(941) 1082297');
+insert into Customers (id, first_name, last_name, email, phone_number) values (24, 'Stefan', 'Dunne', 'sdunnen@princeton.edu', '(891) 7428991');
+insert into Customers (id, first_name, last_name, email, phone_number) values (25, 'Aleen', 'Lober', 'alobero@epa.gov', '(390) 7009534');
+insert into Customers (id, first_name, last_name, email, phone_number) values (26, 'Jacqui', 'Hinzer', 'jhinzerp@jiathis.com', '(793) 1765061');
+insert into Customers (id, first_name, last_name, email, phone_number) values (27, 'Hermy', 'Shiels', 'hshielsq@sitemeter.com', '(363) 1546038');
+insert into Customers (id, first_name, last_name, email, phone_number) values (28, 'Annadiana', 'Jopson', 'ajopsonr@sciencedaily.com', '(123) 2797977');
+insert into Customers (id, first_name, last_name, email, phone_number) values (29, 'Jolee', 'Oleksinski', 'joleksinskis@accuweather.com', '(455) 8753508');
+insert into Customers (id, first_name, last_name, email, phone_number) values (30, 'Wilfred', 'De Vries', 'wdevriest@mlb.com', '(890) 5077603');
+insert into Customers (id, first_name, last_name, email, phone_number) values (31, 'Atlante', 'Linklater', 'alinklateru@yahoo.com', '(427) 7002082');
+insert into Customers (id, first_name, last_name, email, phone_number) values (32, 'Graham', 'Durward', 'gdurwardv@seattletimes.com', '(740) 9794170');
+insert into Customers (id, first_name, last_name, email, phone_number) values (33, 'Everard', 'Jeannenet', 'ejeannenetw@berkeley.edu', '(326) 6065323');
+insert into Customers (id, first_name, last_name, email, phone_number) values (34, 'Ardine', 'Mungane', 'amunganex@si.edu', '(247) 9689310');
+insert into Customers (id, first_name, last_name, email, phone_number) values (35, 'Cathi', 'Rabbitts', 'crabbittsy@tumblr.com', '(962) 8192978');
+insert into Customers (id, first_name, last_name, email, phone_number) values (36, 'Florie', 'Benoy', 'fbenoyz@ucla.edu', '(586) 3728613');
+insert into Customers (id, first_name, last_name, email, phone_number) values (37, 'Rodolfo', 'Tobias', 'rtobias10@cnet.com', '(224) 8137159');
+insert into Customers (id, first_name, last_name, email, phone_number) values (38, 'Harrie', 'Grzegorzewicz', 'hgrzegorzewicz11@si.edu', '(988) 6182714');
+insert into Customers (id, first_name, last_name, email, phone_number) values (39, 'Karon', 'Bevir', 'kbevir12@dagondesign.com', '(880) 4065533');
+insert into Customers (id, first_name, last_name, email, phone_number) values (40, 'Lisa', 'Prisley', 'lprisley13@lycos.com', '(308) 9546293');
+insert into Customers (id, first_name, last_name, email, phone_number) values (41, 'Son', 'Rennix', 'srennix14@studiopress.com', '(240) 8650943');
+insert into Customers (id, first_name, last_name, email, phone_number) values (42, 'Allene', 'Haggath', 'ahaggath15@topsy.com', '(521) 3539968');
+insert into Customers (id, first_name, last_name, email, phone_number) values (43, 'Eda', 'Laidel', 'elaidel16@dedecms.com', '(180) 6524412');
+insert into Customers (id, first_name, last_name, email, phone_number) values (44, 'Shirline', 'Cock', 'scock17@stanford.edu', '(309) 8807982');
+insert into Customers (id, first_name, last_name, email, phone_number) values (45, 'Patten', 'Fairfoull', 'pfairfoull18@ucla.edu', '(770) 6372503');
+insert into Customers (id, first_name, last_name, email, phone_number) values (46, 'Ardelis', 'Jellybrand', 'ajellybrand19@comsenz.com', '(860) 1390882');
+insert into Customers (id, first_name, last_name, email, phone_number) values (47, 'Alleen', 'Braney', 'abraney1a@foxnews.com', '(253) 2482573');
+insert into Customers (id, first_name, last_name, email, phone_number) values (48, 'Vincenty', 'Dusting', 'vdusting1b@sitemeter.com', '(875) 6909862');
+insert into Customers (id, first_name, last_name, email, phone_number) values (49, 'Randy', 'Brangan', 'rbrangan1c@mayoclinic.com', '(496) 1625978');
+insert into Customers (id, first_name, last_name, email, phone_number) values (50, 'Flory', 'Gregor', 'fgregor1d@mapquest.com', '(169) 4489248');
+insert into Customers (id, first_name, last_name, email, phone_number) values (51, 'Olia', 'Tidbury', 'otidbury1e@soup.io', '(638) 4978054');
+insert into Customers (id, first_name, last_name, email, phone_number) values (52, 'Berkly', 'Willas', 'bwillas1f@deviantart.com', '(914) 5405245');
+insert into Customers (id, first_name, last_name, email, phone_number) values (53, 'Curcio', 'Collymore', 'ccollymore1g@wiley.com', '(392) 2054069');
+insert into Customers (id, first_name, last_name, email, phone_number) values (54, 'Lissie', 'Rattenberie', 'lrattenberie1h@multiply.com', '(321) 2452672');
+insert into Customers (id, first_name, last_name, email, phone_number) values (55, 'Marley', 'Malinson', 'mmalinson1i@blogtalkradio.com', '(774) 1668507');
+insert into Customers (id, first_name, last_name, email, phone_number) values (56, 'Dani', 'Marcq', 'dmarcq1j@newyorker.com', '(427) 8636886');
+insert into Customers (id, first_name, last_name, email, phone_number) values (57, 'Christean', 'Vaillant', 'cvaillant1k@redcross.org', '(476) 5166994');
+insert into Customers (id, first_name, last_name, email, phone_number) values (58, 'Geoff', 'Strasse', 'gstrasse1l@wikia.com', '(178) 4349163');
+insert into Customers (id, first_name, last_name, email, phone_number) values (59, 'Alleyn', 'Sandall', 'asandall1m@weebly.com', '(577) 2348846');
+insert into Customers (id, first_name, last_name, email, phone_number) values (60, 'Jorge', 'Remer', 'jremer1n@cnet.com', '(400) 2969127');
+insert into Customers (id, first_name, last_name, email, phone_number) values (61, 'Gib', 'Munby', 'gmunby1o@columbia.edu', '(556) 6282065');
+insert into Customers (id, first_name, last_name, email, phone_number) values (62, 'Dorey', 'Shedd', 'dshedd1p@mayoclinic.com', '(619) 8589801');
+insert into Customers (id, first_name, last_name, email, phone_number) values (63, 'Sibylle', 'Maddigan', 'smaddigan1q@chron.com', '(284) 2881837');
+insert into Customers (id, first_name, last_name, email, phone_number) values (64, 'Kincaid', 'Melley', 'kmelley1r@domainmarket.com', '(738) 4191305');
+insert into Customers (id, first_name, last_name, email, phone_number) values (65, 'Torrance', 'Spalls', 'tspalls1s@weather.com', '(284) 2341772');
+insert into Customers (id, first_name, last_name, email, phone_number) values (66, 'Nedi', 'Cambridge', 'ncambridge1t@ezinearticles.com', '(974) 8832274');
+insert into Customers (id, first_name, last_name, email, phone_number) values (67, 'Garth', 'Edgell', 'gedgell1u@europa.eu', '(980) 4486814');
+insert into Customers (id, first_name, last_name, email, phone_number) values (68, 'Ellwood', 'Petrushanko', 'epetrushanko1v@hhs.gov', '(956) 5235712');
+insert into Customers (id, first_name, last_name, email, phone_number) values (69, 'Marysa', 'Dabnor', 'mdabnor1w@delicious.com', '(291) 6312446');
+insert into Customers (id, first_name, last_name, email, phone_number) values (70, 'Halette', 'Davidow', 'hdavidow1x@acquirethisname.com', '(564) 1105928');
+insert into Customers (id, first_name, last_name, email, phone_number) values (71, 'Phip', 'Routham', 'proutham1y@nih.gov', '(974) 4269271');
+insert into Customers (id, first_name, last_name, email, phone_number) values (72, 'Carline', 'Birney', 'cbirney1z@nba.com', '(767) 5061040');
+insert into Customers (id, first_name, last_name, email, phone_number) values (73, 'Aimee', 'Warboy', 'awarboy20@dropbox.com', '(105) 7281500');
+insert into Customers (id, first_name, last_name, email, phone_number) values (74, 'Carlin', 'Stebbins', 'cstebbins21@dailymotion.com', '(693) 6360337');
+insert into Customers (id, first_name, last_name, email, phone_number) values (75, 'Buddy', 'O''Carran', 'bocarran22@usa.gov', '(714) 3978535');
+insert into Customers (id, first_name, last_name, email, phone_number) values (76, 'Gunter', 'Boath', 'gboath23@soundcloud.com', '(331) 7816838');
+insert into Customers (id, first_name, last_name, email, phone_number) values (77, 'Sarajane', 'Clementucci', 'sclementucci24@aol.com', '(151) 2649244');
+insert into Customers (id, first_name, last_name, email, phone_number) values (78, 'Cilka', 'Simeoni', 'csimeoni25@ucla.edu', '(384) 5428963');
+insert into Customers (id, first_name, last_name, email, phone_number) values (79, 'Alastair', 'Tomasello', 'atomasello26@whitehouse.gov', '(745) 7177397');
+insert into Customers (id, first_name, last_name, email, phone_number) values (80, 'Suellen', 'Charley', 'scharley27@live.com', '(458) 2476860');
+insert into Customers (id, first_name, last_name, email, phone_number) values (81, 'Chloris', 'Leat', 'cleat28@youtu.be', '(264) 1859255');
+insert into Customers (id, first_name, last_name, email, phone_number) values (82, 'Margaretta', 'Lydiatt', 'mlydiatt29@ezinearticles.com', '(168) 5964625');
+insert into Customers (id, first_name, last_name, email, phone_number) values (83, 'Harrietta', 'Heinrici', 'hheinrici2a@blogtalkradio.com', '(769) 9170223');
+insert into Customers (id, first_name, last_name, email) values (84, 'Damien', 'Arlidge', 'darlidge2b@github.com');
+insert into Customers (id, first_name, last_name, email, phone_number) values (85, 'Cosette', 'MacTeague', 'cmacteague2c@usda.gov', '(839) 8379417');
+insert into Customers (id, first_name, last_name, email, phone_number) values (86, 'Sloan', 'Reimers', 'sreimers2d@fastcompany.com', '(143) 3893554');
+insert into Customers (id, first_name, last_name, email, phone_number) values (87, 'Sky', 'Blaw', 'sblaw2e@vkontakte.ru', '(181) 8920363');
+insert into Customers (id, first_name, last_name, email, phone_number) values (88, 'Debera', 'Peever', 'dpeever2f@cbc.ca', '(905) 2045103');
+insert into Customers (id, first_name, last_name, email, phone_number) values (89, 'Chelsae', 'Goodbanne', 'cgoodbanne2g@wufoo.com', '(458) 8163543');
+insert into Customers (id, first_name, last_name, email, phone_number) values (90, 'Keely', 'Manwaring', 'kmanwaring2h@exblog.jp', '(334) 2463360');
+insert into Customers (id, first_name, last_name, email, phone_number) values (91, 'Clair', 'Bleue', 'cbleue2i@nifty.com', '(818) 6604501');
+insert into Customers (id, first_name, last_name, email, phone_number) values (92, 'Ola', 'Bartolomeotti', 'obartolomeotti2j@blogtalkradio.com', '(431) 7728685');
+insert into Customers (id, first_name, last_name, email, phone_number) values (93, 'Erny', 'Edgerton', 'eedgerton2k@hubpages.com', '(244) 2509983');
+insert into Customers (id, first_name, last_name, email, phone_number) values (94, 'Kathi', 'Foskew', 'kfoskew2l@soup.io', '(741) 1925490');
+insert into Customers (id, first_name, last_name, email, phone_number) values (95, 'Rurik', 'Templeton', 'rtempleton2m@xing.com', '(386) 7661243');
+insert into Customers (id, first_name, last_name, email, phone_number) values (96, 'Vivien', 'Devall', 'vdevall2n@dailymotion.com', '(288) 2160437');
+insert into Customers (id, first_name, last_name, email) values (97, 'Geordie', 'Morforth', 'gmorforth2o@reuters.com');
+insert into Customers (id, first_name, last_name, email, phone_number) values (98, 'Dukie', 'Beric', 'dberic2p@homestead.com', '(952) 8164426');
+insert into Customers (id, first_name, last_name, email, phone_number) values (99, 'Joaquin', 'Heephy', 'jheephy2q@tamu.edu', '(675) 4855864');
+insert into Customers (id, first_name, last_name, email, phone_number) values (100, 'Adelice', 'Costigan', 'acostigan2r@sun.com', '(716) 2092266');
+
+
+insert into Basket (id, basket_name, customer_id) values (1, 'Una', 1);
+insert into Basket (id, basket_name, customer_id) values (2, 'Amos', 2);
+insert into Basket (id, basket_name, customer_id) values (3, 'Martyn', 3);
+insert into Basket (id, basket_name, customer_id) values (4, 'Christoper', 4);
+insert into Basket (id, basket_name, customer_id) values (5, 'Wash', 5);
+insert into Basket (id, basket_name, customer_id) values (6, 'Debra', 6);
+insert into Basket (id, basket_name, customer_id) values (7, 'Gannon', 7);
+insert into Basket (id, basket_name, customer_id) values (8, 'Malorie', 8);
+insert into Basket (id, basket_name, customer_id) values (9, 'Claiborne', 9);
+insert into Basket (id, basket_name, customer_id) values (10, 'Armando', 10);
+insert into Basket (id, basket_name, customer_id) values (11, 'Waldemar', 11);
+insert into Basket (id, basket_name, customer_id) values (12, 'Victoir', 12);
+insert into Basket (id, basket_name, customer_id) values (13, 'Zacharie', 13);
+insert into Basket (id, basket_name, customer_id) values (14, 'Jaclyn', 14);
+insert into Basket (id, basket_name, customer_id) values (15, 'Stanleigh', 15);
+insert into Basket (id, basket_name, customer_id) values (16, 'Everett', 16);
+insert into Basket (id, basket_name, customer_id) values (17, 'Daven', 17);
+insert into Basket (id, basket_name, customer_id) values (18, 'Fletch', 18);
+insert into Basket (id, basket_name, customer_id) values (19, 'Marmaduke', 19);
+insert into Basket (id, basket_name, customer_id) values (20, 'Rosamond', 20);
+insert into Basket (id, basket_name, customer_id) values (21, 'Zebulon', 21);
+insert into Basket (id, basket_name, customer_id) values (22, 'Dorelle', 22);
+insert into Basket (id, basket_name, customer_id) values (23, 'Kesley', 23);
+insert into Basket (id, basket_name, customer_id) values (24, 'Corty', 24);
+insert into Basket (id, basket_name, customer_id) values (25, 'Ivar', 25);
+insert into Basket (id, basket_name, customer_id) values (26, 'Cherie', 26);
+insert into Basket (id, basket_name, customer_id) values (27, 'Gayleen', 27);
+insert into Basket (id, basket_name, customer_id) values (28, 'Normand', 28);
+insert into Basket (id, basket_name, customer_id) values (29, 'Borden', 29);
+insert into Basket (id, basket_name, customer_id) values (30, 'Jackson', 30);
+insert into Basket (id, basket_name, customer_id) values (31, 'Jeffrey', 31);
+insert into Basket (id, basket_name, customer_id) values (32, 'Sadye', 32);
+insert into Basket (id, basket_name, customer_id) values (33, 'Kassia', 33);
+insert into Basket (id, basket_name, customer_id) values (34, 'Burgess', 34);
+insert into Basket (id, basket_name, customer_id) values (35, 'Marchelle', 35);
+insert into Basket (id, basket_name, customer_id) values (36, 'Jon', 36);
+insert into Basket (id, basket_name, customer_id) values (37, 'Alvera', 37);
+insert into Basket (id, basket_name, customer_id) values (38, 'Merola', 38);
+insert into Basket (id, basket_name, customer_id) values (39, 'Margette', 39);
+insert into Basket (id, basket_name, customer_id) values (40, 'Dunc', 40);
+insert into Basket (id, basket_name, customer_id) values (41, 'Glynnis', 41);
+insert into Basket (id, basket_name, customer_id) values (42, 'Fletcher', 42);
+insert into Basket (id, basket_name, customer_id) values (43, 'Terrell', 43);
+insert into Basket (id, basket_name, customer_id) values (44, 'Kennan', 44);
+insert into Basket (id, basket_name, customer_id) values (45, 'Florella', 45);
+insert into Basket (id, basket_name, customer_id) values (46, 'Liam', 46);
+insert into Basket (id, basket_name, customer_id) values (47, 'Celle', 47);
+insert into Basket (id, basket_name, customer_id) values (48, 'Carr', 48);
+insert into Basket (id, basket_name, customer_id) values (49, 'Riki', 49);
+insert into Basket (id, basket_name, customer_id) values (50, 'Lorry', 50);
+insert into Basket (id, basket_name, customer_id) values (51, 'Freeman', 51);
+insert into Basket (id, basket_name, customer_id) values (52, 'Frayda', 52);
+insert into Basket (id, basket_name, customer_id) values (53, 'Dannie', 53);
+insert into Basket (id, basket_name, customer_id) values (54, 'Alasteir', 54);
+insert into Basket (id, basket_name, customer_id) values (55, 'Nap', 55);
+insert into Basket (id, basket_name, customer_id) values (56, 'Adel', 56);
+insert into Basket (id, basket_name, customer_id) values (57, 'Sergent', 57);
+insert into Basket (id, basket_name, customer_id) values (58, 'Vincenty', 58);
+insert into Basket (id, basket_name, customer_id) values (59, 'Hynda', 59);
+insert into Basket (id, basket_name, customer_id) values (60, 'Brittaney', 60);
+insert into Basket (id, basket_name, customer_id) values (61, 'Gloriane', 61);
+insert into Basket (id, basket_name, customer_id) values (62, 'Seth', 62);
+insert into Basket (id, basket_name, customer_id) values (63, 'Fan', 63);
+insert into Basket (id, basket_name, customer_id) values (64, 'Doll', 64);
+insert into Basket (id, basket_name, customer_id) values (65, 'Kirbee', 65);
+insert into Basket (id, basket_name, customer_id) values (66, 'Marlie', 66);
+insert into Basket (id, basket_name, customer_id) values (67, 'Tanny', 67);
+insert into Basket (id, basket_name, customer_id) values (68, 'Eli', 68);
+insert into Basket (id, basket_name, customer_id) values (69, 'Stanfield', 69);
+insert into Basket (id, basket_name, customer_id) values (70, 'Elsie', 70);
+insert into Basket (id, basket_name, customer_id) values (71, 'Penelope', 71);
+insert into Basket (id, basket_name, customer_id) values (72, 'Euphemia', 72);
+insert into Basket (id, basket_name, customer_id) values (73, 'Idelle', 73);
+insert into Basket (id, basket_name, customer_id) values (74, 'Walton', 74);
+insert into Basket (id, basket_name, customer_id) values (75, 'Rodolfo', 75);
+insert into Basket (id, basket_name, customer_id) values (76, 'Tina', 76);
+insert into Basket (id, basket_name, customer_id) values (77, 'Chester', 77);
+insert into Basket (id, basket_name, customer_id) values (78, 'Rori', 78);
+insert into Basket (id, basket_name, customer_id) values (79, 'Babb', 79);
+insert into Basket (id, basket_name, customer_id) values (80, 'Lizette', 80);
+insert into Basket (id, basket_name, customer_id) values (81, 'Rheta', 81);
+insert into Basket (id, basket_name, customer_id) values (82, 'Kendre', 82);
+insert into Basket (id, basket_name, customer_id) values (83, 'Rosaleen', 83);
+insert into Basket (id, basket_name, customer_id) values (84, 'Maureen', 84);
+insert into Basket (id, basket_name, customer_id) values (85, 'Rubetta', 85);
+insert into Basket (id, basket_name, customer_id) values (86, 'Ulises', 86);
+insert into Basket (id, basket_name, customer_id) values (87, 'Forster', 87);
+insert into Basket (id, basket_name, customer_id) values (88, 'Nichole', 88);
+insert into Basket (id, basket_name, customer_id) values (89, 'Juan', 89);
+insert into Basket (id, basket_name, customer_id) values (90, 'Hatti', 90);
+insert into Basket (id, basket_name, customer_id) values (91, 'Rad', 91);
+insert into Basket (id, basket_name, customer_id) values (92, 'Ade', 92);
+insert into Basket (id, basket_name, customer_id) values (93, 'Lindy', 93);
+insert into Basket (id, basket_name, customer_id) values (94, 'Ive', 94);
+insert into Basket (id, basket_name, customer_id) values (95, 'Farley', 95);
+insert into Basket (id, basket_name, customer_id) values (96, 'Mikaela', 96);
+insert into Basket (id, basket_name, customer_id) values (97, 'Hillie', 97);
+insert into Basket (id, basket_name, customer_id) values (98, 'Taite', 98);
+insert into Basket (id, basket_name, customer_id) values (99, 'Lainey', 99);
+insert into Basket (id, basket_name, customer_id) values (100, 'Milton', 100);
+
+insert into Products (id, name, description, price, weight) values (1, 'Webster', 'Milt op involving gasoline bomb, military personnel', 43565, 59);
+insert into Products (id, name, description, price, weight) values (2, 'Olimpia', 'Neoplasm of uncertain behavior of skin', 55976, 30);
+insert into Products (id, name, description, price, weight) values (3, 'Dorey', 'Mechanical loosening of internal left knee prosthetic joint', 83920, 18);
+insert into Products (id, name, description, price, weight) values (4, 'Cris', 'Polyphagia', 21755, 14);
+insert into Products (id, name, description, price, weight) values (5, 'Malissa', 'Asphyxiation due to hanging, undetermined, subs encntr', 58497, 49);
+insert into Products (id, name, description, price, weight) values (6, 'Katharina', 'Chronic embolism and thombos unsp deep vn unsp low extrm', 25609, 76);
+insert into Products (id, name, description, price, weight) values (7, 'Leslie', 'Nondisp fx of 4th metatarsal bone, unsp ft, 7thD', 90706, 91);
+insert into Products (id, name, description, price, weight) values (8, 'Gratiana', 'Lacerat intrns musc/fasc/tend l rng fngr at wrs/hnd lv, sqla', 58883, 47);
+insert into Products (id, name, description, price, weight) values (9, 'Othella', 'Sarcoid iridocyclitis', 31233, 25);
+insert into Products (id, name, description, price, weight) values (10, 'Kirsteni', 'Discitis, unspecified, multiple sites in spine', 38503, 15);
+insert into Products (id, name, description, price, weight) values (11, 'Filmer', 'Superficial foreign body of right shoulder, sequela', 76046, 53);
+insert into Products (id, name, description, price, weight) values (12, 'Conney', 'Enteroptosis', 96589, 79);
+insert into Products (id, name, description, price, weight) values (13, 'Sax', 'Hemoptysis', 25483, 89);
+insert into Products (id, name, description, price, weight) values (14, 'Dieter', 'Primary open-angle glaucoma, right eye, stage unspecified', 28174, 2);
+insert into Products (id, name, description, price, weight) values (15, 'Thomasina', 'Nondisp commnt fx shaft of ulna, r arm, 7thN', 95089, 85);
+insert into Products (id, name, description, price, weight) values (16, 'Valene', 'Other secondary osteonecrosis of left radius', 86643, 47);
+insert into Products (id, name, description, price, weight) values (17, 'Anabelle', 'Methicillin suscep staph infection, unsp site', 88942, 15);
+insert into Products (id, name, description, price, weight) values (18, 'Maison', 'Major laceration of inferior vena cava, subsequent encounter', 90485, 18);
+insert into Products (id, name, description, price, weight) values (19, 'Morie', 'Sltr-haris Type I physl fx lower end radius, right arm, sqla', 99293, 87);
+insert into Products (id, name, description, price, weight) values (20, 'Cody', 'Toxic effect of venom of wasps, intentional self-harm, subs', 59187, 72);
+insert into Products (id, name, description, price, weight) values (21, 'Felisha', 'Other specified injuries of thyroid gland, subs encntr', 49544, 97);
+insert into Products (id, name, description, price, weight) values (22, 'Jeanine', 'Unsp fx r forearm, subs for opn fx type 3A/B/C w malunion', 43069, 67);
+insert into Products (id, name, description, price, weight) values (23, 'Manya', 'Nondisp fx of nk of 4th MC bone, l hand, 7thP', 40054, 80);
+insert into Products (id, name, description, price, weight) values (24, 'Ron', 'Toxic effect of venom of brown recluse spider, assault, subs', 74844, 7);
+insert into Products (id, name, description, price, weight) values (25, 'Dayle', 'Nodular corneal degeneration', 11235, 65);
+insert into Products (id, name, description, price, weight) values (26, 'Arabelle', 'Other specified bursopathies, unspecified elbow', 51141, 11);
+insert into Products (id, name, description, price, weight) values (27, 'Viv', 'Dislocation of unspecified ankle joint, initial encounter', 23662, 56);
+insert into Products (id, name, description, price, weight) values (28, 'Lyda', 'Dislocation of carpometacarpal joint of left thumb', 98372, 65);
+insert into Products (id, name, description, price, weight) values (29, 'Rem', 'Maternal care for abnlt of pelvic organ, unsp, third tri', 83223, 7);
+insert into Products (id, name, description, price, weight) values (30, 'Armin', 'Other disorders of fructose metabolism', 35418, 100);
+insert into Products (id, name, description, price, weight) values (31, 'Jilleen', 'Greenstick fx shaft of humer, unsp arm, 7thG', 41657, 60);
+insert into Products (id, name, description, price, weight) values (32, 'Sioux', 'Juvenile and adolescent idiopathic scoliosis', 18933, 31);
+insert into Products (id, name, description, price, weight) values (33, 'Beverie', 'Underdosing of other drugs acting on muscles, init encntr', 63274, 80);
+insert into Products (id, name, description, price, weight) values (34, 'Leon', 'Hit by falling object due to accident to canoe/kayk, init', 67438, 45);
+insert into Products (id, name, description, price, weight) values (35, 'Natasha', 'Occupant of stcar injured by fall from streetcar, sequela', 96248, 99);
+insert into Products (id, name, description, price, weight) values (36, 'Lark', 'Fracture of other part of scapula, right shoulder, sequela', 32462, 53);
+insert into Products (id, name, description, price, weight) values (37, 'Derek', 'Malnutrition in pregnancy, third trimester', 59905, 68);
+insert into Products (id, name, description, price, weight) values (38, 'Berny', 'Unsp inj msl/tnd lng flxr msl toe at ank/ft lev, r ft, sqla', 90071, 60);
+insert into Products (id, name, description, price, weight) values (39, 'Minda', 'Unspecified injury of dorsal vein of right foot, init encntr', 52891, 7);
+insert into Products (id, name, description, price, weight) values (40, 'Jonas', 'Acquired clubfoot, left foot', 70280, 51);
+insert into Products (id, name, description, price, weight) values (41, 'Wanda', 'Other balloon accident injuring occupant, initial encounter', 84669, 25);
+insert into Products (id, name, description, price, weight) values (42, 'Willabella', 'Drown due to fall/jump fr oth burning powered wtrcrft, init', 65194, 78);
+insert into Products (id, name, description, price, weight) values (43, 'Crissy', 'Mech compl of implnt elec nstim, generator, subs', 62866, 94);
+insert into Products (id, name, description, price, weight) values (44, 'Gabriele', 'Unsp physl fx upr end rad, l arm, subs for fx w delay heal', 67638, 2);
+insert into Products (id, name, description, price, weight) values (45, 'Jonell', 'Family hx of malig neoplm of resp and intrathorac organs', 22316, 37);
+insert into Products (id, name, description, price, weight) values (46, 'Lucho', 'Adverse effect of antivaric drugs, inc scler agents, init', 23883, 6);
+insert into Products (id, name, description, price, weight) values (47, 'Chlo', 'Adhes due to fb acc left in body fol surgical op, subs', 39742, 75);
+insert into Products (id, name, description, price, weight) values (48, 'Howie', 'Unspecified injury of vein at forearm level, right arm', 96203, 94);
+insert into Products (id, name, description, price, weight) values (49, 'Kara-lynn', 'Inj musc/fasc/tend at wrist and hand level, right hand, subs', 88274, 30);
+insert into Products (id, name, description, price, weight) values (50, 'Burk', 'Autonomic dysreflexia', 26620, 7);
+insert into Products (id, name, description, price, weight) values (51, 'Amie', 'Oth disp fx of 7th cervcal vert, subs for fx w routn heal', 44219, 7);
+insert into Products (id, name, description, price, weight) values (52, 'Fanni', 'Sequelae of viral encephalitis', 62872, 98);
+insert into Products (id, name, description, price, weight) values (53, 'Lanae', 'Presence of unspecified artificial wrist joint', 55346, 16);
+insert into Products (id, name, description, price, weight) values (54, 'Boyd', 'Unspecified nondisplaced fracture of third cervical vertebra', 86602, 66);
+insert into Products (id, name, description, price, weight) values (55, 'Kelley', 'Unsp inj extn/abdr musc/fasc/tend of r thm at forarm lv,subs', 58682, 83);
+insert into Products (id, name, description, price, weight) values (56, 'Carlos', 'Unsp fracture of unsp femur, subs for clos fx w nonunion', 93188, 33);
+insert into Products (id, name, description, price, weight) values (57, 'Blair', 'Unsp inj extn musc/fasc/tend unsp finger at forarm lv, subs', 80359, 44);
+insert into Products (id, name, description, price, weight) values (58, 'Rebbecca', 'Oth injury due to oth accident to canoe or kayak, subs', 50827, 79);
+insert into Products (id, name, description, price, weight) values (59, 'Liza', 'Oth fracture of unsp lesser toe(s), init for clos fx', 19270, 18);
+insert into Products (id, name, description, price, weight) values (60, 'Tammi', 'Counseling for family member of alcoholic', 26246, 67);
+insert into Products (id, name, description, price, weight) values (61, 'Rivy', 'Calculus of bile duct w acute and chronic cholecyst w obst', 82951, 87);
+insert into Products (id, name, description, price, weight) values (62, 'Bev', 'Car driver injured in collision w SUV in traf, subs', 51489, 28);
+insert into Products (id, name, description, price, weight) values (63, 'Maryjane', 'Oth fracture of first thor vertebra, subs for fx w nonunion', 66002, 47);
+insert into Products (id, name, description, price, weight) values (64, 'Tiffi', 'Nondisp fx of lateral condyle of unsp tibia, 7thR', 76661, 93);
+insert into Products (id, name, description, price, weight) values (65, 'Donnamarie', 'Maternal care for oth fetal abnormality and damage, fetus 5', 80150, 73);
+insert into Products (id, name, description, price, weight) values (66, 'Deva', 'Hyp hrt & chr kdny dis w hrt fail and stg 1-4/unsp chr kdny', 75802, 10);
+insert into Products (id, name, description, price, weight) values (67, 'Matthaeus', 'Obstetric pyemic and septic embolism', 25291, 34);
+insert into Products (id, name, description, price, weight) values (68, 'Cookie', 'Expsr to oth furniture fire due to unsp burn material, subs', 49539, 70);
+insert into Products (id, name, description, price, weight) values (69, 'Prentiss', 'Toxic effect of lead and its compounds, undet, sequela', 32530, 3);
+insert into Products (id, name, description, price, weight) values (70, 'Carce', 'Oclr lac/rupt w prolaps/loss of intraoc tissue, r eye, sqla', 28669, 82);
+insert into Products (id, name, description, price, weight) values (71, 'Loren', 'Unsp inj musc/fasc/tend at wrs/hnd lv, unsp hand, sequela', 70238, 74);
+insert into Products (id, name, description, price, weight) values (72, 'Ema', 'Other anophthalmos', 81849, 5);
+insert into Products (id, name, description, price, weight) values (73, 'Catina', 'Drown due to falling or jumping from burning canoe or kayak', 37034, 4);
+insert into Products (id, name, description, price, weight) values (74, 'Cale', 'Amyloidosis', 18615, 91);
+insert into Products (id, name, description, price, weight) values (75, 'Vanna', 'Nondisplaced bicondylar fracture of left tibia, sequela', 63460, 15);
+insert into Products (id, name, description, price, weight) values (76, 'Nicolette', 'Disp fx of cuboid bone of l foot, subs for fx w routn heal', 30241, 38);
+insert into Products (id, name, description, price, weight) values (77, 'Bethina', 'Benign neoplasm of left retina', 87218, 62);
+insert into Products (id, name, description, price, weight) values (78, 'Carmelle', 'Other fracture of shaft of right humerus', 36769, 13);
+insert into Products (id, name, description, price, weight) values (79, 'Darleen', 'Early syphilis, unspecified', 57985, 20);
+insert into Products (id, name, description, price, weight) values (80, 'Ann', 'Laceration of uterus', 93154, 35);
+insert into Products (id, name, description, price, weight) values (81, 'Artemis', 'Poisoning by coronary vasodilators, assault, subs encntr', 21575, 62);
+insert into Products (id, name, description, price, weight) values (82, 'Carilyn', 'Sprain of medial collateral ligament of unsp knee, init', 26406, 17);
+insert into Products (id, name, description, price, weight) values (83, 'Ree', 'Chronic gout due to renal impairment, right knee, w tophus', 75369, 99);
+insert into Products (id, name, description, price, weight) values (84, 'Berkie', 'Encounter for full-term uncomplicated delivery', 49562, 22);
+insert into Products (id, name, description, price, weight) values (85, 'Matias', 'Corrosion of first degree of chin, sequela', 96654, 83);
+insert into Products (id, name, description, price, weight) values (86, 'Ulric', 'Sprain of unsp parts of unsp shoulder girdle, subs encntr', 51526, 19);
+insert into Products (id, name, description, price, weight) values (87, 'Mahalia', 'Burn of unsp degree of left scapular region, subs encntr', 14098, 17);
+insert into Products (id, name, description, price, weight) values (88, 'Tammy', 'Smoking (tobacco) complicating pregnancy, third trimester', 46031, 74);
+insert into Products (id, name, description, price, weight) values (89, 'Garrot', 'Toxic effect of cyanides, undetermined', 21414, 25);
+insert into Products (id, name, description, price, weight) values (90, 'Sully', 'Discitis, unspecified, thoracic region', 69187, 58);
+insert into Products (id, name, description, price, weight) values (91, 'Irina', 'Disp fx of coronoid pro of r ulna, init for opn fx type I/2', 11101, 84);
+insert into Products (id, name, description, price, weight) values (92, 'Matthew', 'Other specified injuries of lower back, initial encounter', 34678, 8);
+insert into Products (id, name, description, price, weight) values (93, 'Val', 'Breakdown (mechanical) of cystostomy catheter', 38626, 16);
+insert into Products (id, name, description, price, weight) values (94, 'Flinn', 'Oth fracture of unsp acetabulum, init for clos fx', 71187, 27);
+insert into Products (id, name, description, price, weight) values (95, 'Freddy', 'Lac w fb of abd wall, right upper q w penet perit cav, init', 84267, 80);
+insert into Products (id, name, description, price, weight) values (96, 'Christian', 'Displaced fracture of trapezoid, unspecified wrist', 20113, 48);
+insert into Products (id, name, description, price, weight) values (97, 'Rafaelita', 'Nondisp fx of olecran pro w intartic extn unsp ulna, 7thF', 33423, 84);
+insert into Products (id, name, description, price, weight) values (98, 'Delphinia', 'Ankylosing hyperostosis [Forestier], site unspecified', 58895, 42);
+insert into Products (id, name, description, price, weight) values (99, 'Gardy', 'Toxic effects of other metals', 43542, 19);
+insert into Products (id, name, description, price, weight) values (100, 'Bax', 'Unsp inj msl/tnd lng flxr msl toe at ank/ft lev, l ft, init', 84939, 80);
+
+insert into Product_Basket (id, basket_id, product_id) values (1, 1, 1);
+insert into Product_Basket (id, basket_id, product_id) values (2, 2, 2);
+insert into Product_Basket (id, basket_id, product_id) values (3, 3, 3);
+insert into Product_Basket (id, basket_id, product_id) values (4, 4, 4);
+insert into Product_Basket (id, basket_id, product_id) values (5, 5, 5);
+insert into Product_Basket (id, basket_id, product_id) values (6, 6, 6);
+insert into Product_Basket (id, basket_id, product_id) values (7, 7, 7);
+insert into Product_Basket (id, basket_id, product_id) values (8, 8, 8);
+insert into Product_Basket (id, basket_id, product_id) values (9, 9, 9);
+insert into Product_Basket (id, basket_id, product_id) values (10, 10, 10);
+insert into Product_Basket (id, basket_id, product_id) values (11, 11, 11);
+insert into Product_Basket (id, basket_id, product_id) values (12, 12, 12);
+insert into Product_Basket (id, basket_id, product_id) values (13, 13, 13);
+insert into Product_Basket (id, basket_id, product_id) values (14, 14, 14);
+insert into Product_Basket (id, basket_id, product_id) values (15, 15, 15);
+insert into Product_Basket (id, basket_id, product_id) values (16, 16, 16);
+insert into Product_Basket (id, basket_id, product_id) values (17, 17, 17);
+insert into Product_Basket (id, basket_id, product_id) values (18, 18, 18);
+insert into Product_Basket (id, basket_id, product_id) values (19, 19, 19);
+insert into Product_Basket (id, basket_id, product_id) values (20, 20, 20);
+insert into Product_Basket (id, basket_id, product_id) values (21, 21, 21);
+insert into Product_Basket (id, basket_id, product_id) values (22, 22, 22);
+insert into Product_Basket (id, basket_id, product_id) values (23, 23, 23);
+insert into Product_Basket (id, basket_id, product_id) values (24, 24, 24);
+insert into Product_Basket (id, basket_id, product_id) values (25, 25, 25);
+insert into Product_Basket (id, basket_id, product_id) values (26, 26, 26);
+insert into Product_Basket (id, basket_id, product_id) values (27, 27, 27);
+insert into Product_Basket (id, basket_id, product_id) values (28, 28, 28);
+insert into Product_Basket (id, basket_id, product_id) values (29, 29, 29);
+insert into Product_Basket (id, basket_id, product_id) values (30, 30, 30);
+insert into Product_Basket (id, basket_id, product_id) values (31, 31, 31);
+insert into Product_Basket (id, basket_id, product_id) values (32, 32, 32);
+insert into Product_Basket (id, basket_id, product_id) values (33, 33, 33);
+insert into Product_Basket (id, basket_id, product_id) values (34, 34, 34);
+insert into Product_Basket (id, basket_id, product_id) values (35, 35, 35);
+insert into Product_Basket (id, basket_id, product_id) values (36, 36, 36);
+insert into Product_Basket (id, basket_id, product_id) values (37, 37, 37);
+insert into Product_Basket (id, basket_id, product_id) values (38, 38, 38);
+insert into Product_Basket (id, basket_id, product_id) values (39, 39, 39);
+insert into Product_Basket (id, basket_id, product_id) values (40, 40, 40);
+insert into Product_Basket (id, basket_id, product_id) values (41, 41, 41);
+insert into Product_Basket (id, basket_id, product_id) values (42, 42, 42);
+insert into Product_Basket (id, basket_id, product_id) values (43, 43, 43);
+insert into Product_Basket (id, basket_id, product_id) values (44, 44, 44);
+insert into Product_Basket (id, basket_id, product_id) values (45, 45, 45);
+insert into Product_Basket (id, basket_id, product_id) values (46, 46, 46);
+insert into Product_Basket (id, basket_id, product_id) values (47, 47, 47);
+insert into Product_Basket (id, basket_id, product_id) values (48, 48, 48);
+insert into Product_Basket (id, basket_id, product_id) values (49, 49, 49);
+insert into Product_Basket (id, basket_id, product_id) values (50, 50, 50);
+insert into Product_Basket (id, basket_id, product_id) values (51, 51, 51);
+insert into Product_Basket (id, basket_id, product_id) values (52, 52, 52);
+insert into Product_Basket (id, basket_id, product_id) values (53, 53, 53);
+insert into Product_Basket (id, basket_id, product_id) values (54, 54, 54);
+insert into Product_Basket (id, basket_id, product_id) values (55, 55, 55);
+insert into Product_Basket (id, basket_id, product_id) values (56, 56, 56);
+insert into Product_Basket (id, basket_id, product_id) values (57, 57, 57);
+insert into Product_Basket (id, basket_id, product_id) values (58, 58, 58);
+insert into Product_Basket (id, basket_id, product_id) values (59, 59, 59);
+insert into Product_Basket (id, basket_id, product_id) values (60, 60, 60);
+insert into Product_Basket (id, basket_id, product_id) values (61, 61, 61);
+insert into Product_Basket (id, basket_id, product_id) values (62, 62, 62);
+insert into Product_Basket (id, basket_id, product_id) values (63, 63, 63);
+insert into Product_Basket (id, basket_id, product_id) values (64, 64, 64);
+insert into Product_Basket (id, basket_id, product_id) values (65, 65, 65);
+insert into Product_Basket (id, basket_id, product_id) values (66, 66, 66);
+insert into Product_Basket (id, basket_id, product_id) values (67, 67, 67);
+insert into Product_Basket (id, basket_id, product_id) values (68, 68, 68);
+insert into Product_Basket (id, basket_id, product_id) values (69, 69, 69);
+insert into Product_Basket (id, basket_id, product_id) values (70, 70, 70);
+insert into Product_Basket (id, basket_id, product_id) values (71, 71, 71);
+insert into Product_Basket (id, basket_id, product_id) values (72, 72, 72);
+insert into Product_Basket (id, basket_id, product_id) values (73, 73, 73);
+insert into Product_Basket (id, basket_id, product_id) values (74, 74, 74);
+insert into Product_Basket (id, basket_id, product_id) values (75, 75, 75);
+insert into Product_Basket (id, basket_id, product_id) values (76, 76, 76);
+insert into Product_Basket (id, basket_id, product_id) values (77, 77, 77);
+insert into Product_Basket (id, basket_id, product_id) values (78, 78, 78);
+insert into Product_Basket (id, basket_id, product_id) values (79, 79, 79);
+insert into Product_Basket (id, basket_id, product_id) values (80, 80, 80);
+insert into Product_Basket (id, basket_id, product_id) values (81, 81, 81);
+insert into Product_Basket (id, basket_id, product_id) values (82, 82, 82);
+insert into Product_Basket (id, basket_id, product_id) values (83, 83, 83);
+insert into Product_Basket (id, basket_id, product_id) values (84, 84, 84);
+insert into Product_Basket (id, basket_id, product_id) values (85, 85, 85);
+insert into Product_Basket (id, basket_id, product_id) values (86, 86, 86);
+insert into Product_Basket (id, basket_id, product_id) values (87, 87, 87);
+insert into Product_Basket (id, basket_id, product_id) values (88, 88, 88);
+insert into Product_Basket (id, basket_id, product_id) values (89, 89, 89);
+insert into Product_Basket (id, basket_id, product_id) values (90, 90, 90);
+insert into Product_Basket (id, basket_id, product_id) values (91, 91, 91);
+insert into Product_Basket (id, basket_id, product_id) values (92, 92, 92);
+insert into Product_Basket (id, basket_id, product_id) values (93, 93, 93);
+insert into Product_Basket (id, basket_id, product_id) values (94, 94, 94);
+insert into Product_Basket (id, basket_id, product_id) values (95, 95, 95);
+insert into Product_Basket (id, basket_id, product_id) values (96, 96, 96);
+insert into Product_Basket (id, basket_id, product_id) values (97, 97, 97);
+insert into Product_Basket (id, basket_id, product_id) values (98, 98, 98);
+insert into Product_Basket (id, basket_id, product_id) values (99, 99, 99);
+insert into Product_Basket (id, basket_id, product_id) values (100, 100, 100);
+
+insert into Product_Info (id, expiration_date, country, color, product_id) values (1, '2022-05-02', 'Portugal', 'Teal', 1);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (2, '2021-05-29', 'Madagascar', 'Violet', 2);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (3, '2021-08-08', 'Russia', 'Aquamarine', 3);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (4, '2021-03-26', 'Azerbaijan', 'Orange', 4);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (5, '2021-04-11', 'Indonesia', 'Turquoise', 5);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (6, '2021-01-27', 'Guatemala', 'Khaki', 6);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (7, '2022-03-05', 'Sweden', 'Blue', 7);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (8, '2022-07-06', 'China', 'Fuscia', 8);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (9, '2022-10-23', 'Czech Republic', 'Purple', 9);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (10, '2022-12-28', 'Indonesia', 'Turquoise', 10);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (11, '2021-11-06', 'Guatemala', 'Green', 11);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (12, '2022-12-31', 'Portugal', 'Goldenrod', 12);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (13, '2022-08-03', 'Colombia', 'Green', 13);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (14, '2021-10-12', 'Russia', 'Teal', 14);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (15, '2022-01-26', 'Sweden', 'Maroon', 15);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (16, '2022-08-31', 'Portugal', 'Khaki', 16);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (17, '2022-12-24', 'Cameroon', 'Violet', 17);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (18, '2022-03-15', 'Serbia', 'Fuscia', 18);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (19, '2021-12-13', 'North Korea', 'Violet', 19);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (20, '2022-01-31', 'France', 'Blue', 20);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (21, '2021-09-12', 'Sweden', 'Maroon', 21);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (22, '2021-01-27', 'Indonesia', 'Yellow', 22);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (23, '2022-03-03', 'Czech Republic', 'Khaki', 23);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (24, '2022-03-28', 'Nigeria', 'Blue', 24);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (25, '2022-03-21', 'Indonesia', 'Fuscia', 25);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (26, '2021-07-03', 'Finland', 'Crimson', 26);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (27, '2022-08-03', 'China', 'Red', 27);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (28, '2021-06-26', 'China', 'Indigo', 28);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (29, '2022-07-05', 'Uruguay', 'Pink', 29);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (30, '2021-04-08', 'Poland', 'Mauv', 30);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (31, '2022-05-17', 'Greece', 'Crimson', 31);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (32, '2022-02-04', 'Philippines', 'Fuscia', 32);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (33, '2021-05-11', 'Indonesia', 'Puce', 33);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (34, '2021-06-19', 'Nigeria', 'Puce', 34);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (35, '2021-10-29', 'Cuba', 'Turquoise', 35);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (36, '2022-06-01', 'China', 'Teal', 36);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (37, '2022-03-05', 'Greece', 'Goldenrod', 37);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (38, '2022-03-17', 'Russia', 'Goldenrod', 38);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (39, '2021-11-29', 'Vietnam', 'Fuscia', 39);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (40, '2021-03-13', 'China', 'Purple', 40);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (41, '2022-05-18', 'Russia', 'Maroon', 41);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (42, '2021-04-20', 'Brazil', 'Crimson', 42);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (43, '2022-01-21', 'Portugal', 'Pink', 43);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (44, '2021-11-30', 'Afghanistan', 'Violet', 44);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (45, '2021-09-07', 'United States', 'Maroon', 45);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (46, '2022-05-09', 'Indonesia', 'Green', 46);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (47, '2021-10-10', 'China', 'Aquamarine', 47);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (48, '2022-02-12', 'Poland', 'Yellow', 48);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (49, '2022-10-08', 'Albania', 'Violet', 49);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (50, '2022-03-14', 'China', 'Green', 50);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (51, '2021-03-09', 'Maldives', 'Red', 51);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (52, '2021-01-29', 'China', 'Puce', 52);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (53, '2022-08-07', 'Czech Republic', 'Yellow', 53);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (54, '2021-07-22', 'Czech Republic', 'Mauv', 54);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (55, '2021-05-28', 'Canada', 'Crimson', 55);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (56, '2022-05-31', 'Vietnam', 'Green', 56);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (57, '2022-12-15', 'China', 'Blue', 57);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (58, '2021-01-15', 'Indonesia', 'Yellow', 58);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (59, '2021-06-07', 'Vietnam', 'Pink', 59);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (60, '2021-10-07', 'China', 'Crimson', 60);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (61, '2022-03-25', 'Russia', 'Orange', 61);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (62, '2021-05-20', 'Russia', 'Aquamarine', 62);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (63, '2022-07-01', 'Finland', 'Crimson', 63);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (64, '2022-10-05', 'France', 'Teal', 64);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (65, '2022-12-13', 'Argentina', 'Turquoise', 65);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (66, '2022-07-11', 'China', 'Teal', 66);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (67, '2021-01-13', 'Indonesia', 'Goldenrod', 67);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (68, '2021-05-01', 'China', 'Pink', 68);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (69, '2022-05-19', 'Nigeria', 'Yellow', 69);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (70, '2022-11-02', 'Japan', 'Violet', 70);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (71, '2021-05-25', 'Greece', 'Maroon', 71);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (72, '2021-12-15', 'Nigeria', 'Fuscia', 72);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (73, '2022-12-30', 'Japan', 'Khaki', 73);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (74, '2022-03-27', 'Indonesia', 'Blue', 74);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (75, '2022-08-04', 'Brazil', 'Khaki', 75);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (76, '2022-11-02', 'Ukraine', 'Purple', 76);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (77, '2021-07-14', 'Uzbekistan', 'Pink', 77);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (78, '2021-04-08', 'Ukraine', 'Fuscia', 78);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (79, '2021-10-09', 'Poland', 'Crimson', 79);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (80, '2021-07-22', 'Brazil', 'Green', 80);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (81, '2021-05-08', 'Mali', 'Goldenrod', 81);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (82, '2021-06-12', 'China', 'Green', 82);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (83, '2022-03-04', 'Armenia', 'Puce', 83);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (84, '2021-07-03', 'Czech Republic', 'Orange', 84);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (85, '2021-12-06', 'Portugal', 'Aquamarine', 85);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (86, '2021-04-26', 'Argentina', 'Turquoise', 86);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (87, '2022-06-04', 'France', 'Turquoise', 87);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (88, '2022-11-13', 'Brazil', 'Purple', 88);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (89, '2022-12-07', 'Philippines', 'Goldenrod', 89);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (90, '2021-10-18', 'Indonesia', 'Pink', 90);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (91, '2022-05-05', 'United States', 'Orange', 91);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (92, '2021-10-31', 'Indonesia', 'Red', 92);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (93, '2021-11-02', 'New Caledonia', 'Mauv', 93);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (94, '2022-06-22', 'Russia', 'Mauv', 94);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (95, '2022-04-30', 'Kuwait', 'Fuscia', 95);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (96, '2022-10-09', 'Ukraine', 'Red', 96);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (97, '2021-03-21', 'Mexico', 'Aquamarine', 97);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (98, '2022-11-22', 'Mozambique', 'Pink', 98);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (99, '2021-05-09', 'France', 'Turquoise', 99);
+insert into Product_Info (id, expiration_date, country, color, product_id) values (100, '2021-06-28', 'Argentina', 'Indigo', 100);
+
+-- 1. Баардык продукталарды(Products) жана информацияларды чыгар.
+select * from Products join Product_Info PI on Products.id = PI.product_id;
+-- 2. Информациясы бар болгон продукталарды гана чыгар.
+select * from Product_Info  inner join Products p on Product_Info.product_id = p.id ;
+-- 3. Информациясы жок(null) болгон продукталарды чыгар.
+-- Responce: mende anday jok agai!
+-- 4. Баардык продукталардын атын жана срогун чыгар.
+select p.name,PI.expiration_date from Products p join Product_Info PI on p.id = PI.product_id;
+-- 5. Баардык продукталарды жана анын мамлекеттери "М" менен башталган шаарларын чыгар.
+select * from Products join Product_Info on country like 'M%';
+-- 6. Баардык кардардын(Customers) аттарын жана кардарга тийешелуу карзинанын(Basket_терин) аттарын сорттоп чыгар.(asc,desc)
+select * from Customers c join Basket b on c.id = b.customer_id
+order by c.first_name;
+-- 7. Кардардын аты жана кардардын продуктулары чыксын.
+select c.first_name,p.name from Customers c join Basket B on c.id = B.customer_id join Product_Basket pb
+    on B.id = pb.basket_id join Products p on pb.product_id = p.id;
+-- 8. Кардардын аты, кардар алган продуктун аты, баасы, салмагы чыксын.
+select c.first_name,p.name,p.price,p.weight from Customers c join Basket B on c.id = B.customer_id join Product_Basket pb
+    on B.id = pb.basket_id join Products p on pb.product_id = p.id;
+-- 9. Бир кардар эки окшош продукт алган болсо, кардардын аты,
+--     кардар алган продукталарынын аты уникалдуу болуп баасы жана салмагы кошулуп чыгар.
+select c.first_name, pg_ndistinct_in(p.name) ,p.price,p.weight from Customers c join Products p on c.id = p.id;
+-- 10.Бир өлкөдө чыккан продукталдын баарын чыгар 'Portugal'.
+select * from products join Product_Info PI on Products.id = PI.product_id
+where country like 'Portugal';
+-- 11.Кардарлардын баарын жана алган продукталарынын баасынын суммасын тегеректеп (округлить) чыгар.
+select c.first_name,round(sum(P.price)) from Customers c join Basket B on c.id = B.customer_id join
+    Product_Basket PB on B.id = PB.basket_id
+join Products P on P.id = PB.product_id
+group by c.first_name;
+-- 12."2021" ден "2023" кө чейинки сроктогу продукталардын атын жана срокторун чыгар.
+select c.name,PI.expiration_date from Products c join Product_Info PI on c.id = PI.product_id
+where PI.expiration_date between  '2021-01-01' and '2023-12-31';
+-- 13.Срогу "2022" болгон продукталардын шаарын , продукталардын атын жана баасын чыгар бирок баалары 0 болуп калсын.
+select pi.country,P.name,P.price from Product_Info pi join Products P on P.id = pi.product_id
+where pi.expiration_date between '2022-01-01' and '2022-12-31' and P.price IS NULL
+group by  pi.country, P.name, P.price;
+-- 14.Баардык кардарлардын продукталарынын сумассын чыгар.
+select sum(P.price) from Customers c join Basket B on c.id = B.customer_id
+    join Product_Basket PB on B.id = PB.basket_id join Products P on P.id = PB.product_id;
+-- 15.Кардардын аты жана ал сатып алган продуктунун аты, тусу чыксын.
+select c.first_name,P.name,PI.color from Customers c join Basket B on c.id = B.customer_id
+    join Product_Basket PB on B.id = PB.basket_id
+    join Products P on P.id = PB.product_id
+    join Product_Info PI on P.id = PI.product_id;
+-- 16.Баардык продуктулардын салмактарын чыгар.
+select sum(weight) from Products;
+-- 17.Кардарлардын email_дары "com" менен буткон кардарлардын аттары, корзинасынын аты чыксын.
+select c.first_name,c.email,B.basket_name from Customers c join Basket B on c.id = B.customer_id
+where c.email like '%com';
+-- 18.Продуклардын атын, кыскача маалыматын(description), кардардын атын чыгар качан кардарлардын номери жок(null) болсо.
+select p.name,p.description,c.first_name,c.phone_number from Customers c
+    join Basket B on c.id = B.customer_id
+    join Product_Basket PB on B.id = PB.basket_id
+    join Products P on P.id = PB.product_id
+where c.phone_number is null;
+-- 19.Бардык продуктунун тустору жана тустору окшош продукталары чыксын.
+select p.name,PI.color from Products p join Product_Info PI on p.id = PI.product_id
+ order by PI.color;
+-- 20.Баардык продукталардын мамлекти окшош болгон продукталардын атын жана анын кардарларын атын чыгар.
+select p.name,PI.country,C.first_name from Products p join Product_Info PI
+    on p.id = PI.product_id join Product_Basket PB on p.id = PB.product_id
+    join Basket B on B.id = PB.basket_id join Customers C on C.id = B.customer_id
+ order by PI.country;
